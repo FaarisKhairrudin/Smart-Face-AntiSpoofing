@@ -126,59 +126,46 @@ Smart-Face-AntiSpoofing/
 
 ---
 
-## 🖼️ Adding Visualizations
-
-To include key outputs from the notebook in this README, export/screenshot the following visualizations and save them to `assets/images/`:
-
-| Filename | Source | Description |
-|----------|--------|-------------|
-| `label-distribution.png` | Cell: Label Distribution | Training dataset class balance |
-| `sample-images.png` | Cell: Sample Images | Representative image per class |
-| `confusion-matrix.png` | Cell: Confusion Matrix | Validation set prediction breakdown |
-| `misclassified-examples.png` | Cell: Misclassified Examples | Examples where model made errors |
-
-The image links in the sections above will automatically display once files are added.
-
----
 
 ## 🛠️ How to Run
 
+### 🎯 Quick Start
+
+The notebook is **fully self-contained** and requires minimal setup:
+
 ### Prerequisites
 - Python 3.9+
-- CUDA 11.8+ (recommended for GPU training)
-- ~10GB GPU VRAM (for DINOv3-ConvNeXt)
+- PyTorch with CUDA support (recommended for GPU training)
+- 10GB+ GPU VRAM (for DINOv3-ConvNeXt model)
+- Internet connection for downloading dataset from Google Drive
 
-### Environment Setup
+### 🚀 Running the Notebook
 
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/FaarisKhairrudin/Smart-Face-AntiSpoofing.git
 cd Smart-Face-AntiSpoofing
 
-# Install dependencies (recommended: conda or venv)
-pip install -r requirements.txt  # Create if needed
+# 2. Open and run notebook
+# For Kaggle: Upload notebook and run directly in Kaggle environment
+# For Jupyter: jupyter notebook notebook/face-spoofing-newest.ipynb
 ```
 
-### Running the Notebook
+### ✨ What Happens Automatically
 
-The main notebook is configured for **Kaggle environment**:
+✅ **Data Download**: Dataset, sample submission, and best model are automatically downloaded from Google Drive  
+✅ **Path Configuration**: All paths are configured automatically - no manual path adjustments needed  
+✅ **Environment**: Set `HF_TOKEN` environment variable if accessing private Hugging Face models  
+✅ **Sequential Execution**: Run all cells from top to bottom in order
+
+That's it! The notebook handles everything else.
+
+### Optional: Set HF Token (if needed)
 
 ```bash
-# For Kaggle: Run cells sequentially in the notebook interface
-# For Local: Modify paths in Configuration cell
-
-# Key setup steps:
-1. Set environment variable: HF_TOKEN (for Hugging Face model access)
-2. Ensure dataset is downloaded to correct paths
-3. Execute cells step-by-step from top to bottom
-```
-
-**Configuration Cell Adjustments** (if running locally):
-```python
-# Modify these paths based on your local directory structure
-DATA_TRAIN_DIR = "/path/to/train_yolo"
-DATA_TEST_DIR = "/path/to/test_yolo"
-OUTPUT_DIR = "/path/to/outputs"
+# For Kaggle: Add to Secrets tab
+# For Local: Set environment variable
+export HF_TOKEN="your_huggingface_token"
 ```
 
 ---
