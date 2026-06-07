@@ -174,9 +174,9 @@ export HF_TOKEN="your_huggingface_token"
 
 | Metric | Score |
 |--------|-------|
-| **Best Validation Macro F1** | *[Update with your result]* |
-| **Public Leaderboard Score** | *[Update with your score]* |
-| **Private Leaderboard Score** | *[Update after evaluation]* |
+| **Best Validation Macro F1** | *0.97* |
+| **Public Leaderboard Score** | *0.95765 (TOP 18)* |
+| **Private Leaderboard Score** | *0.97907 (TOP 13)* |
 
 ---
 
